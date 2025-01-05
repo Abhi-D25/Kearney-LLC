@@ -1,0 +1,44 @@
+.navbar {
+  position: fixed; /* Change from relative to fixed */
+  display: flex;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4); 
+  color: white;
+  padding: 5px 20px;
+  z-index: 10; /* Ensure it's above other content */
+  backdrop-filter: blur(5px); /* Optional: adds a blur effect for more translucency */
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 50px; /* Closer links for compact navbar */
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.navbar-logo h1 {
+  font-size: 1.3rem;
+  color: whtie;
+  margin: 0;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 15px; /* Adjusted gap for more compact links */
+}
+
+.navbar-links a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar-links a:hover {
+  color: #6ab1e7;
+}
