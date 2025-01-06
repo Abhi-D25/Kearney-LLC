@@ -1,25 +1,24 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import Layout from './components/layout/Layout';
 import Home from './pages/Home';
-import AboutUs from './pages/AboutUs';
+import About from './pages/About';
 import Projects from './pages/Projects';
 import Insights from './pages/Insights';
 
-function App() {
+const App = () => {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/insights" element={<Insights />} />
-      </Routes>
-      <Footer/>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/insights" element={<Insights />} />
+        </Routes>
+      </Layout>
     </Router>
   );
-}
+};
 
 export default App;
