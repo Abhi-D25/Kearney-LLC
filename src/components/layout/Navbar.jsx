@@ -62,10 +62,10 @@ const Navbar = () => {
             ))}
             <button 
               className={`
-                px-4 py-2 rounded-full text-sm font-medium border-2 transition-colors
+                px-4 py-2 rounded-full text-sm font-medium border-2 transition-colors duration-300
                 ${isScrolled
-                  ? 'border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white'
-                  : 'border-white text-white hover:bg-white hover:text-gray-900'
+                  ? 'border-white bg-blue text-white-600 hover:bg-white hover:text-blue-600'  // White button with blue text when scrolled
+                  : 'border-white text-white hover:bg-white hover:text-gray-900' // White button with black text on hover when transparent
                 }
               `}
             >
@@ -106,9 +106,9 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <button className="w-full mt-4 px-3 py-2 text-center rounded-full border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition-colors">
-            Contact Us
-          </button>
+          <button className="w-full mt-4 px-3 py-2 text-center rounded-full bg-blue-600 text-white hover:bg-blue-700 transition-colors">
+              Contact Us
+            </button>
         </div>
       </div>
     </nav>

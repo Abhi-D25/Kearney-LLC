@@ -30,7 +30,7 @@ const Insights = () => {
     <div className="min-h-screen">
       <section className="bg-blue-600 py-20">
         <div className="container mx-auto px-4 text-white">
-          <h1 className="text-5xl font-bold mb-6">Market Insights</h1>
+          <h1 className="text-5xl font-bold mb-6 mt-20">Market Insights</h1>
           <p className="text-xl max-w-2xl">Understanding market trends and opportunities in our target regions</p>
         </div>
       </section>

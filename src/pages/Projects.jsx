@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+
 import UkiahImage from '../assets/images/Ukiah.png';
+import PetalumaImage from '../assets/images/planning.jpeg';
 
 import Card from '../components/common/Card';
 import Modal from '../components/common/Modal';
@@ -21,13 +23,14 @@ const Projects = () => {
         size: '5 acres',
         units: '50 residential units',
         features: ['Sustainable design', 'Community spaces', 'Modern amenities'],
-        completion: 'Q4 2024'
+        completion: 'TBD'
       }
     },
     {
       id: 2,
       title: 'Petaluma Project',
       location: 'Petaluma, California',
+      imageUrl: PetalumaImage,
       status: 'Planning',
       description: 'Future community development opportunity.',
       details: {
@@ -44,7 +47,7 @@ const Projects = () => {
       {/* Projects Header */}
       <section className="bg-blue-600 py-20">
         <div className="container mx-auto px-4 text-white">
-          <h1 className="text-5xl font-bold mb-6">Our Projects</h1>
+          <h1 className="text-5xl font-bold mb-6 mt-20">Our Projects</h1>
           <p className="text-xl max-w-2xl">
             Discover our current developments and future opportunities
           </p>
@@ -72,7 +75,7 @@ const Projects = () => {
                   }`}>
                     {project.status}
                   </span>
-                  <Button variant="secondary" size="sm">
+                  <Button variant="secondary" size="sm" className="flex items-center">
                     Learn More <ArrowRight className="ml-2 w-4 h-4" />
                   </Button>
                 </div>
@@ -92,7 +95,7 @@ const Projects = () => {
         {selectedProject && (
           <div>
             <img
-              src="/api/placeholder/800/400"
+              src={selectedProject.imageUrl}
               alt={selectedProject.title}
               className="w-full h-64 object-cover rounded-lg mb-6"
             />

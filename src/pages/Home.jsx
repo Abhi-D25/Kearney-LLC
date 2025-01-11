@@ -5,12 +5,13 @@ import '../assets/images/landscape1.avif';
 
 import UkiahImage from '../assets/images/Ukiah.png';
 import BGImage from '../assets/images/landscape1.avif';
+import planningIMG from '../assets/images/planning.jpeg';
 
 const Home = () => {
   const stats = [
-    { label: 'Projects Completed', value: '10+' },
+    { label: 'Projects Planned', value: '10+' },
     { label: 'Houses Inspected', value: '100+' },
-    { label: 'Years Experience', value: '15+' },
+    { label: 'Women on the Hit List', value: '20+' },
     { label: 'Happy Clients', value: '50+' }
   ];
 
@@ -113,7 +114,7 @@ const Home = () => {
             <div className="group relative overflow-hidden rounded-xl shadow-lg">
               <div className="relative h-96">
                 <img 
-                  src="/api/placeholder/800/600"
+                  src={planningIMG}
                   alt="Petaluma Project"
                   className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
                 />
