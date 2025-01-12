@@ -83,7 +83,7 @@ const AboutUs = () => {
       name: "Steve Andrews",
       role: "Head of Architecture",
       image: Steve,
-      bio: "Old ass nig who i still don't knwo what he looks like and I need a better picture of him"
+      bio: "Old ass fool who i still don't know what he looks like and I need a better picture of him"
     },
     {
       id: 3,
@@ -101,10 +101,10 @@ const AboutUs = () => {
     },
     {
       id: 5,
-      name: "Naielle",
-      role: "Starbucks barista",
+      name: "Monique",
+      role: "Your Girl",
       image: placeholder,
-      bio: "Naielle ensures there's a little love in your coffee"
+      bio: "Cuz you're lowkey a simp 🤣 "
     },
     {
       id: 6,
@@ -207,7 +207,7 @@ const AboutUs = () => {
               with innovative solutions to create exceptional value.
             </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-x-8 gap-y-16 justify-items-center mt-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-x-8 gap-y-16 justify-items-center mt-20">
             {teamMembers.map((member) => (
               <TeamMember
                 key={member.id}

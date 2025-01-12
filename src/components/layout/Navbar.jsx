@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import KearneyDevelopmentsLogo from '../../assets/images/KearneyDevelopmentsLogo.webp';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,6 +32,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex-shrink-0 flex items-center">
+            <img src={KearneyDevelopmentsLogo} alt="Kearney Developments Logo" className="h-12 w-12 mr-4" />
             <Link 
               to="/" 
               className={`text-2xl font-bold ${

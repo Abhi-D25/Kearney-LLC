@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import Button from '../components/common/Button';
 import '../assets/images/landscape1.avif';
@@ -40,13 +41,21 @@ const Home = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <Link to="/insights">
+            <Button 
+              variant="primary"
+              className="group flex items-center justify-center"
+            >
+              Our Insights
+            </Button>
+            </Link>
+
             <Button 
               variant="primary"
               className="group flex items-center justify-center"
               onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
             >
               Explore Our Projects
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
             
             <Button 
@@ -54,7 +63,6 @@ const Home = () => {
               className="group flex items-center justify-center"
             >
               Contact Us
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
 
@@ -103,10 +111,12 @@ const Home = () => {
                 <p className="text-gray-600 mb-4">
                   Luxury living spaces with sustainable design
                 </p>
-                <Button variant="secondary" size="sm">
-                  Learn More 
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
+                <Link to="/projects#ukiah">
+                  <Button variant="secondary" size="sm" className='flex items-center'>
+                    Learn More 
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
               </div>
             </div>
 
@@ -127,10 +137,12 @@ const Home = () => {
                 <p className="text-gray-600 mb-4">
                   Future community development opportunity
                 </p>
-                <Button variant="secondary" size="sm">
-                  Learn More 
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
+                <Link to="/projects#petaluma">
+                  <Button variant="secondary" size="sm" className='flex items-center'>
+                    Learn More 
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

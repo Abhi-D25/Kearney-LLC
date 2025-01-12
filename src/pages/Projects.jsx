@@ -1,46 +1,30 @@
-import React, { useState } from 'react';
-
-import UkiahImage from '../assets/images/Ukiah.png';
-import PetalumaImage from '../assets/images/planning.jpeg';
+import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import Card from '../components/common/Card';
 import Modal from '../components/common/Modal';
 import Button from '../components/common/Button';
 import { ArrowRight } from 'lucide-react';
+import { projectsData } from '../assets/data/projects';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const projects = [
-    {
-      id: 1,
-      title: 'Ukiah Development',
-      location: 'Ukiah, California',
-      imageUrl: UkiahImage,
-      status: 'In Progress',
-      description: 'Luxury living spaces with sustainable design features.',
-      details: {
-        size: '5 acres',
-        units: '50 residential units',
-        features: ['Sustainable design', 'Community spaces', 'Modern amenities'],
-        completion: 'TBD'
-      }
-    },
-    {
-      id: 2,
-      title: 'Petaluma Project',
-      location: 'Petaluma, California',
-      imageUrl: PetalumaImage,
-      status: 'Planning',
-      description: 'Future community development opportunity.',
-      details: {
-        size: '8 acres',
-        units: 'Mixed-use development',
-        features: ['Retail spaces', 'Residential units', 'Green spaces'],
-        completion: 'TBD'
-      }
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Handle direct links to projects
+  useEffect(() => {
+    const projectId = location.hash.replace('#', '');
+    if (projectId && projectsData[projectId]) {
+      setSelectedProject(projectsData[projectId]);
     }
-  ];
+  }, [location]);
+
+  const handleCloseModal = () => {
+    setSelectedProject(null);
+    navigate('/projects', { replace: true });
+  };
 
   return (
     <div className="min-h-screen">
@@ -58,14 +42,17 @@ const Projects = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
-            {projects.map((project) => (
+          {Object.values(projectsData).map((project) => (
               <Card
                 key={project.id}
                 imageUrl={project.imageUrl}
                 title={project.title}
                 subtitle={project.location}
                 className="cursor-pointer hover:shadow-xl transition-all"
-                onClick={() => setSelectedProject(project)}
+                onClick={() => {
+                  setSelectedProject(project);
+                  navigate(`/projects#${project.id}`);
+                }}
               >
                 <div className="flex justify-between items-center">
                   <span className={`px-3 py-1 rounded-full text-sm ${
@@ -88,7 +75,7 @@ const Projects = () => {
       {/* Project Modal */}
       <Modal
         isOpen={!!selectedProject}
-        onClose={() => setSelectedProject(null)}
+        onClose={handleCloseModal}
         title={selectedProject?.title}
         size="lg"
       >

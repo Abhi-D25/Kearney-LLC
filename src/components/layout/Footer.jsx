@@ -20,7 +20,7 @@ const Footer = () => {
               </a>
               <div className="flex items-center">
                 <Phone className="w-5 h-5 mr-2" />
-                +1 (707) 555-1234
+                +1 (707) 322-3740
               </div>
               <div className="flex items-center">
                 <MapPin className="w-5 h-5 mr-2" />
@@ -44,8 +44,8 @@ const Footer = () => {
           <div>
             <h3 className="text-white text-lg font-semibold mb-4">Projects</h3>
             <ul className="space-y-2">
-              <li><Link to="/projects/ukiah" className="hover:text-blue-400">Ukiah Development</Link></li>
-              <li><Link to="/projects/petaluma" className="hover:text-blue-400">Petaluma Project</Link></li>
+              <li><Link to="/projects#ukiah" className="hover:text-blue-400">Ukiah Development</Link></li>
+              <li><Link to="/projects#petaluma" className="hover:text-blue-400">Petaluma Project</Link></li>
             </ul>
           </div>
 
